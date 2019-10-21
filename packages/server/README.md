@@ -11,13 +11,13 @@ For a more thorough introduction see these two nice articles:
 ## Installation
 
 ```js
-npm install @webauthn/client
-npm install @webauthn/server
+npm install @banno/webauthn-client
+npm install @banno/webauthn-server
 ```
 
 ## usage
 
-`Webauthn` is composed of two parts `@webauthn/client` and `@webauthn/server`
+`Webauthn` is composed of two parts `@banno/webauthn-client` and `@banno/webauthn-server`
 
 ### On the browser
 
@@ -25,7 +25,7 @@ npm install @webauthn/server
 import { 
     solveRegistrationChallenge,
     solveLoginChallenge
-} from '@webauthn/client';
+} from '@banno/webauthn-client';
 ```
 
 - `solveRegistrationChallenge`:
@@ -44,7 +44,7 @@ import {
     parseLoginRequest,
     generateLoginChallenge,
     verifyAuthenticatorAssertion,
-} from '@webauthn/server';
+} from '@banno/webauthn-server';
 ```
 
 - `parseRegisterRequest`:
