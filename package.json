@@ -6,6 +6,10 @@
         "type": "git",
         "url": "https://github.com/banno/webauthn.git"
     },
+    "scripts": {
+        "postinstall": "lerna bootstrap",
+        "test": "lerna run test"
+    },
     "workspaces": [
         "packages/*",
         "example/*"
