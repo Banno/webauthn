@@ -8,6 +8,9 @@
     "url": "https://github.com:banno/webauthn.git",
     "directory": "packages/server"
   },
+  "scripts": {
+    "lint": "eslint --fix --ignore-pattern !.eslintrc.js src"
+  },
   "engines": {
     "node": ">=10 <11"
   },
@@ -16,5 +19,8 @@
     "jsrsasign": "^8.0.12",
     "jws": "^3.2.2",
     "pem": "^1.14.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1"
   }
 }
