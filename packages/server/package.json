@@ -1,6 +1,6 @@
 {
   "name": "@banno/webauthn-server",
-  "version": "0.2.0-next.0",
+  "version": "0.2.0-next.1",
   "main": "src/index.js",
   "license": "Apache-2.0",
   "repository": {
