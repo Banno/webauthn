@@ -16,5 +16,8 @@
     ],
     "devDependencies": {
         "lerna": "^3.14.1"
+    },
+    "resolutions": {
+        "https-proxy-agent": "^2.2.3"
     }
 }
