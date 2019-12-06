@@ -3,6 +3,7 @@ const { getChallengeFromClientData } = require('./getChallengeFromClientData');
 const { validateAndroidSafetyNetKey } = require('./authenticatorKey/parseAndroidSafetyNetKey');
 const { validateFidoPackedKey } = require('./authenticatorKey/parseFidoPackedKey');
 const { validateFidoU2FKey } = require('./authenticatorKey/parseFidoU2FKey');
+const { validateNoneKey } = require('./authenticatorKey/parseNoneKey');
 const { validateLoginCredentials } = require('./validation');
 
 exports.generateLoginChallenge = key => {
@@ -49,6 +50,15 @@ exports.verifyAuthenticatorAssertion = (data, key) => {
 
     if (key.fmt === 'fido-u2f') {
         return validateFidoU2FKey(
+            authenticatorDataBuffer,
+            key,
+            data.response.clientDataJSON,
+            data.response.signature
+        );
+    }
+
+    if (key.fmt === 'none') {
+        return validateNoneKey(
             authenticatorDataBuffer,
             key,
             data.response.clientDataJSON,
