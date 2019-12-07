@@ -5,6 +5,7 @@ const { getChallengeFromClientData } = require('./getChallengeFromClientData');
 const { parseAndroidSafetyNetKey } = require('./authenticatorKey/parseAndroidSafetyNetKey');
 const { parseFidoU2FKey } = require('./authenticatorKey/parseFidoU2FKey');
 const { parseFidoPackedKey } = require('./authenticatorKey/parseFidoPackedKey');
+const { parseNoneKey } = require('./authenticatorKey/parseNoneKey');
 const { validateRegistrationCredentials } = require('./validation');
 
 const parseAuthenticatorKey = (webAuthnResponse) => {
@@ -23,6 +24,13 @@ const parseAuthenticatorKey = (webAuthnResponse) => {
 
     if (authenticatorKey.fmt === 'fido-u2f') {
         return parseFidoU2FKey(
+            authenticatorKey,
+            webAuthnResponse.clientDataJSON
+        );
+    }
+
+    if (authenticatorKey.fmt === 'none') {
+        return parseNoneKey(
             authenticatorKey,
             webAuthnResponse.clientDataJSON
         );
