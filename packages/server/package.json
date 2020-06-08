@@ -11,9 +11,6 @@
   "scripts": {
     "lint": "eslint --fix --ignore-pattern !.eslintrc.js src"
   },
-  "engines": {
-    "node": ">=10 <11"
-  },
   "dependencies": {
     "cbor": "^5.0.1",
     "jsrsasign": "^8.0.12",
