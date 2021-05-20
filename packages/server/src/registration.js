@@ -92,6 +92,10 @@ exports.generateRegistrationChallenge = ({ relyingParty, user, authenticator = '
             {
                 type: 'public-key',
                 alg: -7 // "ES256" IANA COSE Algorithms registry
+            },
+            {
+                type: 'public-key',
+                alg: -257 // "RS256" IANA COSE Algorithms registry
             }
         ],
         authenticatorSelection: {
